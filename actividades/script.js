@@ -82,19 +82,27 @@ return coche;
 
 
 //14-Crea un array de objetos, donde cada objeto represente un libro y tenga propiedades para titulo, autor y añoDePublicacion.
-function arrayLibros(){s
+function arrayLibros(){
     var libros=new Array(
-        {"titulo":"habitos atomicos",
+        {
+        "titulo":"habitos atomicos",
         "autor":"James Clear",
         "añoDePublicacion":2018   
         },
-        {"titulo":"habitos atomicos",
-        "autor":"James Clear",
-        "añoDePublicacion":2018 
-
+        {
+        "titulo":"Las 48 leyes del poder",
+        "autor":"Robert Greene",
+        "añoDePublicacion":1998
+        },
+        {
+        "titulo":"Los 7 hábitos de la gente altamente efectiva",
+        "autor":" Stephen R. Covey",
+        "añoDePublicacion":2011
         }
         )
+        return console.log(libros);
 }
+arrayLibros();
 
 //15-Escribe una función que acepte el array de libros y devuelva el libro más reciente (el de mayor añoDePublicacion).
 
