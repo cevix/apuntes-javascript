@@ -19,43 +19,47 @@ saludo("alex");
 //3-Crea un array llamado colores que contenga las cadenas 
 
 function ejercicio3(){
-     var array = new Array("rojo","verde","azul");
-     return console.log(array);
+     var colores = new Array("rojo","verde","azul");
+     return colores;
 }
 
-ejercicio3();
+console.log(ejercicio3());
 
 //4-Añade "amarillo" al final del array colores utilizando el método push().
 
-function ejercicio4(){
-    var array = new Array("rojo","verde","azul")
-    array.push("amarillo");
-    return  console.log(array);
+var colores=ejercicio3();
+
+function ejercicio4(colores){
+    
+    colores.push("amarillo");
+    return  colores;
 
 }
-ejercicio4()
+
 
 //5-Escribe un bucle for que recorra cada elemento del array colores y los imprima en la consola. Usa todos los tipos de for que hemos visto
 
-function recorrerArrayfor(){
-    var array = new Array("rojo","verde","azul","amarillo");
-    for (let element = 0; element < array.length; element++) {
-        console.log(array[element]);  
+var colores=ejercicio4(colores);
+
+function recorrerArrayfor(colores){
+    
+    for (let element = 0; element < colores.length; element++) {
+        console.log(colores[element]);  
     }
 }
 console.log("recorrido de un array con for:")
-recorrerArrayfor();
+recorrerArrayfor(colores);
 
 console.log("recorrido de un array con while: ")
-function recorrerArraywhile(){
-    var array = new Array("rojo","verde","azul","amarillo");
+function recorrerArraywhile(colores){
+    
     var elemento=0;
-    while(elemento<=(array.length-1)){
-        console.log(array[elemento])
+    while(elemento<=(colores.length-1)){
+        console.log(colores[elemento])
         elemento++;
     }
 }
-recorrerArraywhile();
+recorrerArraywhile(colores);
 
 //6-Escribe una función llamada multiplica que acepte dos números como parámetros y devuelva su producto.
 function multiplica(a,b){
@@ -100,11 +104,56 @@ function arrayLibros(){
         "añoDePublicacion":2011
         }
         )
-        return console.log(libros);
+        return libros;
 }
-arrayLibros();
+console.log(arrayLibros());
 
 //15-Escribe una función que acepte el array de libros y devuelva el libro más reciente (el de mayor añoDePublicacion).
 
 //16-Escribe una función llamada suma que acepte un array de números y devuelva su suma.
- 
+var numeros=[4,6,8,3,20];
+function suma(numeros){
+    var sumaTotal=0;
+    for (let i = 0; i <numeros.length ; i++) {
+        sumaTotal+=numeros[i];
+}
+return sumaTotal;
+}
+
+console.log(suma(numeros));
+
+//17-Escribe una función invertir que acepte una cadena y devuelva la cadena invertida (p.ej., invertir("Hola") debe devolver "aloH").
+
+var cadena="Hola";
+function invertir(cadena){
+    var palabraSeparadas=cadena.split("");
+    var invertido=palabraSeparadas.reverse();
+    var palabraInvertida=invertido.join("");
+
+    return palabraInvertida;
+
+};
+
+console.log(invertir(cadena));
+
+
+
+
+/* 18-Escribe una función esPalindromo que acepte una cadena y devuelva true si la cadena es un palíndromo (se lee igual hacia adelante y hacia atrás) 
+y false en caso contrario.*/
+var palabra="iti";
+function esPalindromo(palabra){
+    var separar=palabra.split("");
+    var invertir=separar.reverse();
+    var juntar=invertir.join("");
+    if(juntar==palabra){
+        return "es palindromo"
+    }else{
+        return"no es palindromo"
+    }
+
+}
+
+console.log(esPalindromo(palabra));
+
+//19-Escribe una función que acepte dos cadenas y devuelva true si la segunda cadena es una subcadena de la primera, y false en caso contrario.
