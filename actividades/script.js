@@ -157,3 +157,33 @@ function esPalindromo(palabra){
 console.log(esPalindromo(palabra));
 
 //19-Escribe una función que acepte dos cadenas y devuelva true si la segunda cadena es una subcadena de la primera, y false en caso contrario.
+
+/* 20-Crea una función contadorDeLetras que acepte una cadena y devuelva un objeto que represente la cantidad de veces que aparece cada letra en la cadena
+    (p.ej., contadorDeLetras("hola") debería devolver { h: 1, o: 1, l: 1, a: 1 }).
+  */
+    var cadena="hola"
+    function contadorDeLetras(cadena){
+        var separado=cadena.split("");
+        var letras={};
+        for (let letra = 0; letra < separado.length; letra++) {
+            var palabra = separado[letra];
+            if (letras[palabra]) {
+                letras[palabra]+=1;
+            }else{
+                letras[palabra]=1;
+            }
+            
+        }
+        return letras
+
+    }
+    console.log(contadorDeLetras(cadena))
+
+//21- Escribe un bucle que recorra los números del 1 al 10 e imprima si cada número es par o impar
+
+//22- Escribe un bucle que busque un número determinado en un array. Si el número está en el array, imprime "Número encontrado" y su posición
+
+//23- Escribe un bucle que sume todos los múltiplos de 3 o 5 menores que 100
+//24- Escribe un bucle que cuente el número de veces que una letra aparece en una cadena de texto
+//25- Crea un array con productos para la compra. Recorre la lista y si encuentras el producto "leche", imprime "No olvides comprar leche"
+
