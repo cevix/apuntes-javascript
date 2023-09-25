@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var peso=prompt("introduce tu peso");
+        pesoCorrecto(peso)
+
+        var altura = prompt ("Introduce tu altura")
+
+        function pesoCorrecto(peso){
+            var pesoFloat=parseFloat(peso);
+            if(isNaN(pesoFloat))return console.log("no ha introducido bien el peso");else return pesoFloat
+        }
+        function alturaCorrecta(altura){
+            var alturaFloat=parseFloat(altura);
+            if(isNaN(alturaFloat))return console.log("no ha introducido bien la altura");else return alturaFloat
+        }
+        var pesoFloat=pesoCorrecto(peso)
+        var alturaFloat=alturaCorrecta(altura)
+        console.log(typeof(pesoFloat));
+        console.log(pesoFloat);
+        console.log(typeof(alturaFloat));
+        console.log(alturaFloat);
+
+
+    </script>
+</body>
+</html>
