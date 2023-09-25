@@ -270,3 +270,44 @@ alert("hola")
 */var fecha=new Date()
 fecha
 Date.prototype.sumarFecha=function(){};
+
+
+//clases en javascript
+
+class CarritoDeLaCompra{
+    constructor(id, nombre, cantidad, precio){
+        this.id=id;
+        this.nombre=nombre;
+        this.cantidad=cantidad;
+        this.precio=precio;
+
+    }
+
+    static contarItemsDiferentes(list){
+        var itemsUnicos= new Set();
+        for (var item of list){
+            itemsUnicos.add(item.nombre);
+        }
+        return itemsUnicos.size
+    }
+    
+    static ordenarPorPrecio(listaProductos){
+        listaProductos.sort(function(a,b){
+            return a.precio- b.precio
+        })
+        return listaProductos;
+    }
+    static gastoTotal(listaProductos){
+        listaProductos.map(function(a,b){
+
+        })
+
+    }
+}
+CarritoDeLaCompra.prototype.info=function info(){
+    return this.id+"/"+this.name+"/"+this.cantidad+"/"+this.precio;
+    
+}
+
+
+/*var listaProductos=[new CarritoDeLaCompra(1,"pan",5,1.2),new CarritoDeLaCompra(1,"trigo",5,1.6)]*/
