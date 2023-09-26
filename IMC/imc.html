@@ -8,7 +8,7 @@
 <body>
     <script>
 
-        var peso=prompt("introduce tu peso");
+       var peso=prompt("introduce tu peso");
         pesoCorrecto(peso)
 
         var altura = prompt ("Introduce tu altura")
@@ -27,6 +27,16 @@
         console.log(pesoFloat);
         console.log(typeof(alturaFloat));
         console.log(alturaFloat);
+
+        calcularPeso(pesoFloat,alturaFloat)
+
+        function calcularPeso(pesoFloat,alturaFloat){
+            if(pesoFloat && alturaFloat){
+                var IMC = peso / (altura * altura);
+                return console.log(IMC);
+            }
+
+        }
 
 
     </script>
