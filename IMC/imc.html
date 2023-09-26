@@ -7,37 +7,33 @@
 </head>
 <body>
     <script>
+        do {
+            //pedimos las datos al usuario(peso y altura)
+            var peso=prompt("introduce tu peso");
+            var altura = prompt ("Introduce tu altura")
+            if(!peso===null || !altura===null){
+                var pesoFloat=pesoCorrecto(peso)
+                var alturaFloat=alturaCorrecta(altura)
+                    function pesoCorrecto(peso){
+                        var pesoFloat=parseFloat(peso);
+                        if(isNaN(pesoFloat))return console.log("no ha introducido bien el peso");else return pesoFloat
+                    }
+                    function alturaCorrecta(altura){
+                        var alturaFloat=parseFloat(altura);
+                        if(isNaN(alturaFloat))return console.log("no ha introducido bien la altura");else return alturaFloat
+                    }
+                
+                calcularPeso(pesoFloat,alturaFloat);
 
-       var peso=prompt("introduce tu peso");
-        pesoCorrecto(peso)
-
-        var altura = prompt ("Introduce tu altura")
-
-        function pesoCorrecto(peso){
-            var pesoFloat=parseFloat(peso);
-            if(isNaN(pesoFloat))return console.log("no ha introducido bien el peso");else return pesoFloat
-        }
-        function alturaCorrecta(altura){
-            var alturaFloat=parseFloat(altura);
-            if(isNaN(alturaFloat))return console.log("no ha introducido bien la altura");else return alturaFloat
-        }
-        var pesoFloat=pesoCorrecto(peso)
-        var alturaFloat=alturaCorrecta(altura)
-        console.log(typeof(pesoFloat));
-        console.log(pesoFloat);
-        console.log(typeof(alturaFloat));
-        console.log(alturaFloat);
-
-        calcularPeso(pesoFloat,alturaFloat)
-
-        function calcularPeso(pesoFloat,alturaFloat){
-            if(pesoFloat && alturaFloat){
-                var IMC = peso / (altura * altura);
-                return console.log(IMC);
+                    function calcularPeso(pesoFloat,alturaFloat){
+                        if(pesoFloat && alturaFloat){
+                            var IMC = peso / (altura * altura);
+                            var IMCRedondeado=IMC;
+                            return console.log(IMCRedondeado);
+                        }
+                    }
             }
-
-        }
-
+        }while(!peso===null || !altura===null);
 
     </script>
 </body>
