@@ -11,7 +11,7 @@
             //pedimos las datos al usuario(peso y altura)
             var peso=prompt("introduce tu peso");
             var altura = prompt ("Introduce tu altura")
-            if(!peso===null || !altura===null){
+            if(!(peso===null || altura===null)){
                 var pesoFloat=pesoCorrecto(peso)
                 var alturaFloat=alturaCorrecta(altura)
                     function pesoCorrecto(peso){
@@ -23,17 +23,45 @@
                         if(isNaN(alturaFloat))return console.log("no ha introducido bien la altura");else return alturaFloat
                     }
                 
-                calcularPeso(pesoFloat,alturaFloat);
+                var IMC=calcularPeso(pesoFloat,alturaFloat);
 
                     function calcularPeso(pesoFloat,alturaFloat){
                         if(pesoFloat && alturaFloat){
                             var IMC = peso / (altura * altura);
-                            var IMCRedondeado=IMC;
-                            return console.log(IMCRedondeado);
+                            var IMCDecimal=IMC.toFixed(2);
+                            return IMCDecimal;
                         }
                     }
+                
+                categoriaIMC(IMC);
+
+                function categoriaIMC(IMC){
+
+                    if(IMC<=18.5) {
+                        return alert("Bajo peso")
+                    }
+                    if(IMC>18.5 && IMC<25.0){
+                        return alert("Peso normal")
+                    }
+                    if(IMC=>25.0 && IMC<30.0){
+                        return alert("Sobrepeso")
+                    }
+                    if(IMC=>30.0 && IMC<35.0){
+                        return alert("Obesidad grado I")
+                    }
+                    if(IMC=>35.0 && IMC<40.0){
+                        return alert("Obesidad grado II")
+                    }
+                    if(IMC>40.0){
+                        return alert("Obesidad grado III")
+                    }
+                    
+                }
+
+                
             }
-        }while(!peso===null || !altura===null);
+        }while(!(peso===null || altura===null));
+        alert("Fin del juego")
 
     </script>
 </body>
