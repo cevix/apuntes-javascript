@@ -10,58 +10,64 @@
         do {
             //pedimos las datos al usuario(peso y altura)
             var peso=prompt("introduce tu peso");
-            var altura = prompt ("Introduce tu altura")
-            if(!(peso===null || altura===null)){
-                var pesoFloat=pesoCorrecto(peso)
-                var alturaFloat=alturaCorrecta(altura)
-                    function pesoCorrecto(peso){
-                        var pesoFloat=parseFloat(peso);
-                        if(isNaN(pesoFloat))return console.log("no ha introducido bien el peso");else return pesoFloat
-                    }
-                    function alturaCorrecta(altura){
-                        var alturaFloat=parseFloat(altura);
-                        if(isNaN(alturaFloat))return console.log("no ha introducido bien la altura");else return alturaFloat
-                    }
-                
-                var IMC=calcularPeso(pesoFloat,alturaFloat);
+            if(!(peso===null)){
+                var altura = prompt ("Introduce tu altura");
+                    if(!(altura===null)){
+                        var pesoFloat=valorDePeso(peso)
+                        var alturaFloat=valorDeAltura(altura)
+                        var alturaAjustada=alturaCorrecto(alturaFloat)
+                            function valorDePeso(peso){
+                                var pesoFloat=parseFloat(peso);
+                                if(isNaN(pesoFloat))return alert("no ha introducido bien el peso");else return pesoFloat
+                            }
+                            function valorDeAltura(altura){
+                                var alturaFloat=parseFloat(altura);
+                                if(isNaN(alturaFloat))return alert("no ha introducido bien la altura");else return alturaFloat
+                            }
+                            function alturaCorrecto(alturaFloat){
+                                if(peso>3)return (alturaFloat/100) ;else return alturaFloat
+                            }
+                        
+                        var IMC=calcularPeso(pesoFloat,alturaAjustada);
 
-                    function calcularPeso(pesoFloat,alturaFloat){
-                        if(pesoFloat && alturaFloat){
-                            var IMC = peso / (altura * altura);
-                            var IMCDecimal=IMC.toFixed(2);
-                            return IMCDecimal;
+                            function calcularPeso(pesoFloat,alturaAjustada){
+                                if(pesoFloat && alturaAjustada){
+                                    var IMC = pesoFloat / (alturaAjustada * alturaAjustada);
+                                    var IMCDecimal=IMC.toFixed(2);
+                                    return IMCDecimal;
+                                }
+                            }
+                        
+                        categoriaIMC(IMC);
+
+                        function categoriaIMC(IMC){
+
+                            if(IMC<=18.5) {
+                                return alert("Bajo peso")
+                            }
+                            if(IMC>18.5 && IMC<25.0){
+                                return alert("Peso normal")
+                            }
+                            if(IMC=>25.0 && IMC<30.0){
+                                return alert("Sobrepeso")
+                            }
+                            if(IMC=>30.0 && IMC<35.0){
+                                return alert("Obesidad grado I")
+                            }
+                            if(IMC=>35.0 && IMC<40.0){
+                                return alert("Obesidad grado II")
+                            }
+                            if(IMC>40.0){
+                                return alert("Obesidad grado III")
+                            }
+                            
                         }
-                    }
-                
-                categoriaIMC(IMC);
 
-                function categoriaIMC(IMC){
-
-                    if(IMC<=18.5) {
-                        return alert("Bajo peso")
+                        
                     }
-                    if(IMC>18.5 && IMC<25.0){
-                        return alert("Peso normal")
-                    }
-                    if(IMC=>25.0 && IMC<30.0){
-                        return alert("Sobrepeso")
-                    }
-                    if(IMC=>30.0 && IMC<35.0){
-                        return alert("Obesidad grado I")
-                    }
-                    if(IMC=>35.0 && IMC<40.0){
-                        return alert("Obesidad grado II")
-                    }
-                    if(IMC>40.0){
-                        return alert("Obesidad grado III")
-                    }
-                    
-                }
-
-                
             }
         }while(!(peso===null || altura===null));
-        alert("Fin del juego")
+        alert("Fin del programa")
 
     </script>
 </body>
