@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        fecha1.getTime()+fecha.getTime()
+        fecha1.setTime(fecha1.getTime()+fecha.getTime())
+        
+        */
+        
+    var fecha=new Date(1010,25,25,12,23,59)
+
+
+        Date.prototype.sumarfecha=function(fecha){
+            
+            var yearEscrito=fecha.getFullYear();
+            
+
+            var fechaAhora= new Date(Date.now())
+                var yearNow=fechaAhora.getFullYear();
+                var mes=fechaAhora.getMonth()+1;
+                var dia=fechaAhora.getDate();
+
+                var hora =fechaAhora.getHours();
+                var min =fechaAhora.getMinutes();
+                var sec=fechaAhora.getSeconds();
+
+            var sumYear=yearEscrito+yearNow;
+
+                console.log("La suma de los dos años son: "+sumYear);
+        }
+        fecha.sumarfecha(fecha);
+
+        /*
+        window.scroll(0,100)
+        window.location()
+        location.hash
+        location.host
+        location.hostname
+
+        navigator
+        
+        */
+    
+
+    </script>
+</body>
+</html>

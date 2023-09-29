@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="Hacargado()">
+    <div onmouseleave="mostrarPulsaciones()" onclick="mensDiv()"  onmouseenter="reiniciar()"style="border: 3px solid black; height: 50px;">
+    
+        <button onclick="decirHola('Alex')">
+            pulsame
+        </button>
+        <button onclick="pulsar()">
+            pulsar
+        </button>
+        <button onclick="mostrarPulsaciones()">
+            mostrar pulsaciones
+        </button>
+        <button onclick="mensbutton()">
+            compro
+        </button>
+    </div>
+
+    <div style="margin-top: 20px;">
+        <input type="text" onfocus="decirHola()" onblur="deciradios()">
+        <input type="text" onfocus="decirHola()" onblur="deciradios()">
+        <input type="number" onchange="algoHaCambiado()">
+
+    </div>
+
+    <div>
+        <input type="text" onkeydown="hasPulsado()">
+
+    </div>
+
+    <script>
+
+        //evento:cuando ocurre algo haz algo
+        function decirHola(nombre){
+            alert("Hola "+nombre)
+        }
+
+        var pulsaciones=0;
+        function pulsar(){
+            pulsaciones++
+        }
+        function mostrarPulsaciones(){
+            alert("has pulsado "+pulsaciones)
+
+        }
+        function reiniciar(){
+            pulsaciones=0;
+        }
+
+        function mensDiv(){
+            alert("has pinchado en el div")
+        }
+        function mensbutton(){
+                    alert("has pinchado en el button")
+                }
+        function deciradios(){
+            console.log("adios");
+        }
+        function algoHaCambiado(){
+
+            console.log("ha cambiado algo")
+        }
+        function Hacargado(){
+            alert("se ha cargado por completo")
+        }
+        function hasPulsado(){
+            console.log("has pulsado una tecla")
+        }
+        
+
+    </script>
+
+</body>
+</html>
