@@ -77,31 +77,56 @@ un array
                             return dato
                         }
                     if (eleccionComprobada==2) {
-                        var idDelete=prompt("introduce el id de la tarea eleminar");
-                        var posicion=buscarId(tareas,idDelete);
+                        var idBusc=prompt("introduce el id de la tarea eleminar");
                         
-                        var tareas = tareas.filter(tarea =>tarea.id !=idDelete)
+                        
+                        var tareas = tareas.filter(tarea =>tarea.id !=idBusc)
                         alert("se ha realizado el borrado");
 
-
-                        
-
-                        
                         
                     }
                     if(eleccionComprobada==3){
+                        
                         for (let i = 0; i < tareas.length; i++) {
                             console.log(Object.values(tareas[i]));
                             
                         }
-                        function buscarId(tareas,idDelete){
+                        var idMost=prompt("introduce el id de la tarea eleminar");
+                        var posicion=buscarId(tareas,idMost);
+                        console.log(posicion)
+                        /*
+                        console.log(tareas[posicion].id)
+                        console.log(tareas[posicion].nombre)
+                        console.log(tareas[posicion].descripcion)
+                        console.log(tareas[posicion].fechaLimite)
+                        console.log(tareas[posicion].completada)
+                        */
+                        console.log(id.keys(tareas[posicion])+" : "+id.values(tareas[posicion]))
+                        console.log(nombreValor.keys(tareas[posicion])+" : "+nombreValor.values(tareas[posicion]))
+                        console.log(descripcionValor.keys(tareas[posicion])+" : "+descripcionValor.values(tareas[posicion]))
+                        console.log(fechaLimite.keys(tareas[posicion])+" : "+fechaLimite.values(tareas[posicion]))
+                        console.log(completada.keys(tareas[posicion])+" : "+completada.values(tareas[posicion]))
+                       
+                        
+                        function buscarId(tareas,idBusc){
+                            var posicion=0;
                             for (let i = 0; i < eleccion.length; i++) {
-                               if (tareas[i].id==idDelete) {
-                                    return i
+                               if (tareas[i].id==idBusc) {
+                                   
+                                return posicion
                                }
+                               posicion++
                             
                             }
                             alert("no esta esta tarea,introduce bien el id");
+                        }
+
+
+                    }
+                    if(eleccionComprobada==4){
+                        for (let i = 0; i < tareas.length; i++) {
+                            console.log(Object.values(tareas[i]));
+                            
                         }
 
 
