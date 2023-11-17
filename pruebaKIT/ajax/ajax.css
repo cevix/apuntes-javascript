@@ -1,0 +1,16 @@
+thead{
+    background: orange;
+}
+tbody{
+    background: yellow;
+}
+
+#centrar{
+    display: flex;
+    justify-content: center;
+    
+}
+td{
+    justify-content: center;
+}
+

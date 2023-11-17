@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e859fc26a3.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <i class="fa-solid fa-bug fa-shake"></i>
+    <ul>
+        <li>hijo1</li>
+        <li>hijo2</li>
+        <li>hijo3</li>
+        <li>hijo4</li>
+    </ul>
+    <a href="">HOLA</a>
+    <script>
+        /*
+        var coche=document.querySelector("i");
+        coche.addEventListener("mosueenter",function(e){
+            this.classList.add("fa-shake")
+        })
+        coche.addEventListener("mosueleave",function(e){
+            this.classList.remove("fa-shake")
+        })
+        */
+
+        // de est emodo accedemos a todas y cada una de las libreria de jquery que es el que hemos agregador el script$()
+        /*
+        $("i").on("mouseenter",function(e){
+           $(this).addClass("fa-shake");
+        });
+        $("i").on("mouseleave",function(e){
+           $(this).removeClass("fa-shake");
+        });
+        */
+        $("i").on("click",function(e){
+           $("li").addClass("clase");
+           $(this).css("border 1px solid red");
+        });
+        //
+        /*
+        $("i") 
+        S.fn.init [i.fa-solid.fa-bug.fa-shake, prevObject: S.fn.init(1)]
+        $("i")[0]
+        <i class="fa-solid fa-bug fa-shake"></i>
+        $("li").first.next()
+        $("li").first.next().prev()
+        $("li") coger los elemntos i sin querry all
+        $("li").length la longitud del array
+        $("li").on("click",function(e){console.log("hola")})
+        $("ul").hide()
+        $("ul").show()
+        $("ul").children("a");
+        $("li").first().css("border") esto para buscar el atributo en la terminal
+        $("li").css("border","solid red 2px")
+        for(var l of $("li")){
+            console.log(l)
+        }
+
+        $(this).slideup(1000) 1000 son los milisegundos que tarda
+        */
+    </script>
+</body>
+</html>

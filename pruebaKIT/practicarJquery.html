@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://kit.fontawesome.com/e859fc26a3.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="checkbox" checked><label>Mostrar botones</label>
+    </div>
+
+    <div>
+        <input type="text" placeholder="Introduce la pagina">
+        <input type="submit" value="Abir ventana">
+    </div>
+
+    <div>
+        <p>green</p>
+        <p>red</p>
+        <p>blue</p>
+    </div>
+    <div>
+        <a><i class="fa-solid fa-plus fa-beat-fade"></i></a>
+    </div>
+    
+    <script>
+        $("p").css("border","solid black 1px");
+        $("div").css("border","solid red 2px");
+        $("div").css("width","500px");
+        //parte de
+        $("p").first().on("mouseenter",function(e){
+            $("p").first().css("background","green");
+        })
+        $("p").first().next().on("mouseenter",function(e){
+            $("p").first().next().css("background","red");
+        })
+        $("p").last().on("mouseenter",function(e){
+            $("p").last().css("background","blue");
+        })
+        $("p").on("mouseleave",function(e){
+            $("p").css("background","none");
+        })
+
+    //Contador de ocultar botones
+    var cont=1;
+        $("div").first().on("click",function(e){
+            if (cont%2==0) {
+                $("div input[type=submit]").hide();
+                $("div a").hide();
+                cont++;
+            }else{
+                $("div input[type=submit]").show();
+                $("div a").show();
+                cont++;
+            }
+
+        })
+
+
+
+    </script>
+
+</body>
+</html>
